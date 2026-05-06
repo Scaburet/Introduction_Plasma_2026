@@ -1,19 +1,42 @@
-name: intro-plasma
+name: introduction_plasma_2026
+# d'après github.com/CVandiedonck/introduction_plasma.git
+# avec ajouts depuis github.com/Scaburet/l3bi-r-2026-new
+
 # channels priority
 # see https://bioconda.github.io/
 # conda-forge has highest priority
 channels:
-  - defaults
-  - bioconda
+# defaults changé en nodefaults pour construire l'env sur Mydocker de Saclay, janvier 2025
   - conda-forge
+  - bioconda
+  - nodefaults
+  
 dependencies:
   # Jupyter dependencies
   - jupyterhub>=4.1.6,<5
   - jupyterlab>=4.4,<5
-  - notebook>=7.4,<8
-  - jupyter-resource-usage>=1,<2
-  - jupyterlab-topbar-text >=1.1.0,<2
-  - nodejs>=20
+  - notebook
+  - jupyter-resource-usage
+  - jupyterlab-topbar-text
+  - nodejs
+
+  # Jupyter archive
+  # https://github.com/jupyterlab-contrib/jupyter-archive
+  - jupyter-archive
+  # JupyterLab git
+  # https://github.com/jupyterlab/jupyterlab-git
+  - jupyterlab-git
+  # JupyterLab Variable inspector
+  # https://github.com/lckr/jupyterlab-variableInspector
+  - jupyterlab-variableinspector
+  - nbresuse
+  - libgomp
+
+  # Build tools required for Ubuntu 24.04
+  - gxx_linux-64
+  - gcc_linux-64
+  - gfortran_linux-64
+
   # Python environment
   - python>=3.10
   - pip
@@ -24,20 +47,13 @@ dependencies:
   - matplotlib
   - seaborn
   - biopython
-  # Jupyter archive
-  # https://github.com/jupyterlab-contrib/jupyter-archive
-  - jupyter-archive
-  # JupyterLab git
-  # https://github.com/jupyterlab/jupyterlab-git
-  - jupyterlab-git
+  
   # R environment
   - r-irkernel
   - r-base>=4
   - r-tidyverse
-  # JupyterLab Variable inspector
-  # https://github.com/lckr/jupyterlab-variableInspector
   - r-repr
-  - jupyterlab-variableinspector
+
   - pip:
   # Print module version
     - watermark
