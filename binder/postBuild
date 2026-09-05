@@ -31,6 +31,6 @@ R -e "install.packages('diagram', repos='http://cran.rstudio.com/')"
 # Then install required packages
 # Biostrings: Efficient manipulation of biological strings
 # https://bioconductor.org/packages/release/bioc/html/Biostrings.html
-R -e "BiocManager::install('BiocGenerics')"            # inclut Biostrings, for efficient manipulation of biological strings
-
+R -e "BiocManager::install('BiocGenerics')" 
+R -e "BiocManager::install('BiocGenerics')"           
 
