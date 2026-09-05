@@ -62,6 +62,7 @@ dependencies:
   - r-essentials   
   - r-tidyverse
   - r-repr
+  - r-biocManager  
 
   - pip:
   # Print module version
