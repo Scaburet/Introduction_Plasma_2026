@@ -1,6 +1,6 @@
 name: introduction_plasma_2026
 # d'après github.com/CVandiedonck/introduction_plasma.git
-# avec ajouts depuis github.com/Scaburet/l3bi-r-2026-new
+# avec ajouts depuis github.com/Scaburet/MEG-M1-A2B-2026
 
 # channels priority
 # see https://bioconda.github.io/
@@ -15,10 +15,14 @@ dependencies:
   # Jupyter dependencies
   - jupyterhub>=4.1.6,<5
   - jupyterlab>=4.4,<5
-  - notebook
+  - notebook>=7,<8
+  - jupyter_server>=2,<3
+  - jupyter-server-proxy>=4.1,<4.2
   - jupyter-resource-usage
-  - jupyterlab-topbar-text
+  - jupyterlab-topbar-text    # affiche le nom de l'environnement à droite dans la topbar
   - nodejs
+  - nbresuse
+  - libgomp
 
   # Jupyter archive
   # https://github.com/jupyterlab-contrib/jupyter-archive
@@ -29,13 +33,15 @@ dependencies:
   # JupyterLab Variable inspector
   # https://github.com/lckr/jupyterlab-variableInspector
   - jupyterlab-variableinspector
-  - nbresuse
-  - libgomp
+
 
   # Build tools required for Ubuntu 24.04
   - gxx_linux-64
   - gcc_linux-64
   - gfortran_linux-64
+
+  # Bash environment
+  - bash_kernel
 
   # Python environment
   - python>=3.10
@@ -48,14 +54,16 @@ dependencies:
   - seaborn
   - biopython
   
-  # R environment
+  # R environment (version for Ubuntu 24.04)
   - r-irkernel
   - r-base>=4
+
+  # R packages for the M1 A2B course:
+  - r-essentials   
   - r-tidyverse
   - r-repr
 
   - pip:
   # Print module version
     - watermark
-  # Bash environment
-    - bash_kernel
+
